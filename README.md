@@ -2,7 +2,16 @@
 
 A hybrid deep learning framework integrating self-supervised denoising (**Noise2Void**) with gated convolution inpainting (**DeepFill v2**) to restore noisy, damaged images with high fidelity.
 
-📄 **Read the Research Paper:** [View PDF](./docs/image_inpainting_paper.pdf)
+**Engineered a hybrid deep learning model** integrating DeepFillv2 and Noise2Void concepts to improve image inpainting on noisy images. Implemented and trained the GAN model using PyTorch, TensorFlow, and OpenCV, conducting rigorous ablation studies and performance benchmarking on the Places2 dataset.
+
+📄 **Published Research:** [Read on IEEE Xplore](https://ieeexplore.ieee.org/document/10580110) | [View Local PDF](docs/Research_Paper.pdf)
+
+## 👁️ Visual Results
+
+The pipeline first denoises the input to prevent artifacts, then generates the missing region.
+
+![Inpainting Results](assets/comparison_result.png)
+*(Left to Right: Original Noisy Input, Denoised Output, Mask, Final Inpainted Result)*
 
 ## 🏗️ Architecture Design
 
@@ -25,7 +34,7 @@ graph LR
 * **Denoising:** Noise2Void (Blind-spot network for self-supervised learning).
 * **Inpainting:** DeepFill v2 (Gated Convolutions to handle irregular masks).
 * **Discriminator:** SN-PatchGAN (Spectral Normalization for training stability).
-* **Metrics:** LPIPS, FID, PSNR, SSIM.
+* **Libraries:** OpenCV, NumPy, Matplotlib.
 
 ## 📊 Performance Benchmark
 
@@ -59,7 +68,7 @@ We evaluated the model on the **Places2 Dataset** (10M+ images). Our hybrid mode
 
 1. **Clone the repository:**
 ```bash
-git clone [https://github.com/YOUR_USERNAME/DeepFill-N2V-Inpainting.git](https://github.com/YOUR_USERNAME/DeepFill-N2V-Inpainting.git)
+git clone [https://github.com/menna-marghany/DeepFill-N2V-Inpainting.git](https://github.com/menna-marghany/DeepFill-N2V-Inpainting.git)
 cd DeepFill-N2V-Inpainting
 
 ```
@@ -74,7 +83,7 @@ pip install -r requirements.txt
 
 3. **Run the Inference Pipeline:**
 ```bash
-python inference.py --input examples/noisy_image.jpg --mask examples/mask.png
+python inference.py
 
 ```
 
@@ -82,11 +91,7 @@ python inference.py --input examples/noisy_image.jpg --mask examples/mask.png
 
 ## 🔗 Citation
 
-If you find this work useful, please cite our paper:
-
-> **M. Elharmil, M. Merghany, S. Youssef**, "An Enhanced Integrated Model for Image Inpainting Using Gated Convolution Spectral Normalized SN-Patch," AASTMT, 2024.
+> **M. Elharmil, M. Merghany, S. Youssef**, "An Enhanced Integrated Model for Image Inpainting Using Gated Convolution Spectral Normalized SN-Patch Generative Adversarial Networks," *2024 International Conference on Machine Intelligence and Smart Innovation (ICMISI)*, Alexandria, Egypt, 2024, pp. 1-7. DOI: [10.1109/ICICIS61608.2024.10580110](https://ieeexplore.ieee.org/document/10580110).
 
 ```
-
-
 
