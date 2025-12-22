@@ -18,7 +18,7 @@ The pipeline first denoises the input to prevent artifacts, then generates the m
 
 The system operates in a novel two-stage pipeline designed to handle real-world noisy data, which traditional inpainters often struggle with. Below is the detailed architecture proposed in our research paper.
 
-![Proposed Architecture Diagram](assets/architecture_diagram.jpg)
+![Proposed Architecture Diagram](assets/architecture.jpg)
 *(Figure 1: The proposed integrated model architecture combining Noise2Void (N2V) preprocessing with the Gated Convolution based DeepFillv2 inpainting network.)*
 
 
