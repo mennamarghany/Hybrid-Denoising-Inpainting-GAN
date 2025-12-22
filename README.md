@@ -13,20 +13,14 @@ The pipeline first denoises the input to prevent artifacts, then generates the m
 ![Inpainting Results](assets/comparison_result.png)
 *(Left to Right: Original Noisy Input, Denoised Output, Mask, Final Inpainted Result)*
 
+
 ## 🏗️ Architecture Design
 
-The system operates in a novel two-stage pipeline designed to handle real-world noisy data, which traditional inpainters often struggle with.
+The system operates in a novel two-stage pipeline designed to handle real-world noisy data, which traditional inpainters often struggle with. Below is the detailed architecture proposed in our research paper.
 
-```mermaid
-graph LR
-    Input[Noisy/Damaged Image] -->|Stage 1: Self-Supervised| N2V[Noise2Void Denoising]
-    N2V -->|Cleaned Context| Mask[Mask Generation]
-    N2V -->|Cleaned Image| DF[DeepFill v2 Inpainting]
-    Mask --> DF
-    DF -->|Gated Convolution| Refine[Refinement Network]
-    Refine -->|SN-PatchGAN| Output[Final Restored Image]
+![Proposed Architecture Diagram](assets/architecture_diagram.jpg)
+*(Figure 1: The proposed integrated model architecture combining Noise2Void (N2V) preprocessing with the Gated Convolution based DeepFillv2 inpainting network.)*
 
-```
 
 ## 🛠️ Tech Stack
 
